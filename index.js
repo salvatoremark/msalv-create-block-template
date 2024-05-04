@@ -45,9 +45,7 @@ module.exports = {
     category: "widgets",
     customBlockJSON: {},
     customPackageJSON: {},
-    customScripts: {
-      script: "file:./script.js",
-    },
+    customScripts: {},
     dashicon: "superhero",
     description:
       "A plugin created by the create-block tool using a custom external project template.",

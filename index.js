@@ -48,7 +48,7 @@ module.exports = {
     customScripts: {},
     dashicon: "superhero",
     description:
-      "A plugin created by the create-block tool using a custom external project template.",
+      "A new block created by the create-block tool using a custom external project template.",
     domainPath: undefined,
     editorScript: "file:./index.js",
     editorStyle: "file:./index.css",
@@ -68,7 +68,7 @@ module.exports = {
     pluginURI: undefined,
     render: "file:./render.php",
     script: "file:./script.js",
-    slug: "create-block-template",
+    slug: "new-block-project",
     style: "file:./style-index.css",
     supports: {
       html: false,
@@ -82,8 +82,8 @@ module.exports = {
         margin: false,
       },
     },
-    textdomain: "msalv-create-block-template",
-    title: "msalv Create Block Template",
+    textdomain: "new-block-project",
+    title: "New Block",
     updateURI: undefined,
     variantVars: { isDynamicVariant: true, isInteractiveVariant: false },
     version: "0.1.0",

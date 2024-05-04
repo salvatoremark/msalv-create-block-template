@@ -83,7 +83,7 @@ module.exports = {
       },
     },
     textdomain: "msalv-create-block-template",
-    title: "MSALV Create Block Template",
+    title: "msalv Create Block Template",
     updateURI: undefined,
     variantVars: { isDynamicVariant: true, isInteractiveVariant: false },
     version: "0.1.0",

@@ -41,13 +41,12 @@ if (!class_exists('{{namespacePascalCase}}_{{slugPascalCase}}')) {
     function __construct() {
       add_action('init', array($this, 'block_init'));
     }
-    /**
-     * Registers the block using the metadata loaded from the `block.json` file.
-     * Behind the scenes, it registers also all assets so they can be enqueued
-     * through the block editor in the corresponding context.
-     *
-     * @see https://developer.wordpress.org/reference/functions/register_block_type/
-     */
+     /**
+      * Register the block using the metadata loaded from `block.json`.
+      * It also registers all assets so they can be enqueued.
+      *
+      * @see https://developer.wordpress.org/reference/functions/register_block_type/
+      */
     function block_init() {
       register_block_type_from_metadata(__DIR__ . '/build');
     }

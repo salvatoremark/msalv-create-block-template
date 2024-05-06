@@ -9,8 +9,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 import metadata from "./block.json";
 
-function Save(props) {
-  const { attributes } = props;
+function Save() {
   const inlineStyles = {
     color: "#ff6600",
     fontSize: "5vw",
@@ -22,7 +21,7 @@ function Save(props) {
 
   return (
     <>
-      <div {...blockProps}>{__("Frontend", metadata.textdomain)}</div>
+      <div {...blockProps}>{__("Frontend", {{textdomain}})}</div>
     </>
   );
 }

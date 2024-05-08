@@ -48,7 +48,7 @@ if (!class_exists('{{namespacePascalCase}}_{{slugPascalCase}}')) {
       * @see https://developer.wordpress.org/reference/functions/register_block_type/
       */
     function block_init() {
-      register_block_type_from_metadata(__DIR__ . '/build');
+      register_block_type(__DIR__ . '/build');
     }
   }
   ${{namespace}}{{slugPascalCase}} = new {{namespacePascalCase}}_{{slugPascalCase}}();

@@ -41,15 +41,40 @@ if (!class_exists('{{namespacePascalCase}}_{{slugPascalCase}}')) {
     function __construct() {
       add_action('init', array($this, 'block_init'));
     }
-     /**
-      * Register the block using the metadata loaded from `block.json`.
-      * It also registers all assets so they can be enqueued.
-      *
-      * @see https://developer.wordpress.org/reference/functions/register_block_type/
-      */
+
+{{#isInteractiveVariant}}
+    /**
+    * Register the block using the metadata loaded from `block.json`.
+    * It also registers all assets so they can be enqueued.
+    *
+    * @see https://developer.wordpress.org/reference/functions/register_block_type/
+    */
     function block_init() {
       register_block_type(__DIR__ . '/build');
     }
+{{/isInteractiveVariant}}
+{{#isDynamicVariant}}
+    /**
+    * Register the block using the metadata loaded from `block.json`.
+    * It also registers all assets so they can be enqueued.
+    *
+    * @see https://developer.wordpress.org/reference/functions/register_block_type/
+    */
+    function block_init() {
+      register_block_type(__DIR__ . '/build', array('render_callback' => array($this, 'render_block')));
+    }
+
+    /**
+    * Since this is a dynamic block, the frontend content depends on 
+    * the function called by the render_callback property of register_block_type.
+    *
+    * @see https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/creating-dynamic-blocks/
+    */
+    function render_block($attributes) { 
+      // Output to frontend
+      return;
+    }
+{{/isDynamicVariant}}
   }
   ${{namespace}}{{slugPascalCase}} = new {{namespacePascalCase}}_{{slugPascalCase}}();
 }
